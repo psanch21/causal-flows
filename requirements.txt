@@ -1,0 +1,17 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+matplotlib==3.7.1
+networkx==2.8.8
+numpy==1.24.3
+pandas==1.5.2
+pytest==7.2.0
+pytorch-lightning==1.8.4
+scikit-learn==1.2.2
+scipy==1.10.1
+seaborn==0.12.2
+torchmetrics==0.11.0
+torchvision==0.14.1
+tueplots==0.0.5
+yacs==0.1.8
+wandb==0.15.8

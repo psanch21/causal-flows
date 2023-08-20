@@ -1,0 +1,106 @@
+device: cpu
+root_dir: output_testing
+seed: 1
+param_count: 0
+dataset:
+  root: ../Data
+  name: chain
+  sem_name: linear # non-linear #non-additive
+  splits: [ 0.8,0.2 ]
+  k_fold: 1
+  shuffle_train: True
+  single_split: False
+  loss: default
+  scale: default
+  num_samples: 1000
+  base_version: 1
+  add_noise: False
+  type: torch
+  use_edge_attr: False
+model:
+  name: causal_nf
+  layer_name: maf
+  net_name: mlp
+  dim_inner: [64]
+  num_layers: 2
+  init: None
+  act: elu
+  dropout: 0.0
+  has_bn: False
+  distr_u: laplace
+  scale_base: False
+  shift_base: False
+  scale: False
+  parity: False
+  adjacency: False
+  base_to_data: False
+  base_distr: normal
+  learn_base: False
+  plot: True
+  latent_dim: 4
+  objective: elbo
+  beta: 1.0
+  distr_x: normal
+  lambda_: 0.01
+gnn:
+  num_layers_pre: 1
+  num_layers: 1
+  num_layers_post: 1
+  dim_inner: 64
+  heads: 1
+  stage_type: skipsum
+  aggregators: [ sum, mean, min, max, std ]
+  scalers: [ identity, amplification, attenuation, linear, inverse_linear ]
+  towers: 1
+  pre_layers: 1
+  post_layers: 1
+  eps: 0.0
+  train_eps: False
+gnn2:
+  num_layers_pre: 1
+  num_layers: 1
+  num_layers_post: 1
+  dim_inner: 64
+  heads: 1
+  stage_type: skipsum
+  aggregators: [ sum, mean, min, max, std ]
+  scalers: [ identity, amplification, attenuation, linear, inverse_linear ]
+  towers: 1
+  pre_layers: 1
+  post_layers: 1
+  eps: 0.0
+  train_eps: False
+train:
+  regularize: False
+  kl: forward  # backward
+  max_epochs: 100
+  batch_size: 64
+  num_workers: 0
+  limit_train_batches: none
+  limit_val_batches: None
+  auto_scale_batch_size: False
+  auto_lr_find: False
+  profiler: None # None, simple, advanced
+  enable_progress_bar: True
+  max_time: None
+  model_checkpoint: True
+  inference_mode: True
+early_stopping:
+  activate: False
+  min_delta: 0.0
+  patience: 3
+  verbose: False
+optim:
+  optimizer: adam
+  base_lr: 0.01
+  beta_1: 0.9
+  beta_2: 0.999
+  momentum: 0.0
+  weight_decay: 0.0
+  scheduler: exp
+  gamma: 0.99
+  step_size: 100
+  mode: min
+  factor: 0.1
+  patience: 10
+  cooldown: 0

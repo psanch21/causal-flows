@@ -1,0 +1,47 @@
+device: auto
+root_dir: output_cf
+seed: 2
+dataset:
+  root: ../Data
+  name: german
+  sem_name: dummy # non-linear #non-additive
+  splits: [ 0.8, 0.1, 0.1 ]
+  k_fold: 2
+  shuffle_train: True
+  loss: default
+  scale: default
+  add_noise: True
+model:
+  name: causal_nf
+  layer_name: nsf
+  dim_inner: [32, 32, 32]
+  num_layers: 1
+  init: None
+  act: elu
+  adjacency: True
+  base_to_data: False
+  plot: True
+train:
+  max_epochs: 1000
+  regularize: False
+  kl: forward  # backward
+  batch_size: 256
+  num_workers: 0
+  limit_train_batches: None
+  limit_val_batches: None
+  max_time: 00:01:00:00
+  inference_mode: False
+optim:
+  optimizer: adam
+  base_lr: 0.001
+  beta_1: 0.9
+  beta_2: 0.999
+  momentum: 0.0
+  weight_decay: 0.0
+  scheduler: plateau
+  gamma: 0.99
+  step_size: 100
+  mode: min
+  factor: 0.9
+  patience: 60
+  cooldown: 0
