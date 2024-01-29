@@ -237,12 +237,13 @@ python main.py --load_model output_cf/14b02ca8f93211ed9c2facde48001122 --opts mo
 If you use the code or findings from this repository and/or article in your work, please cite the following:
 
 ```
-@article{Javaloy2023CausalNF,
-  title={Causal normalizing flows: from theory to practice},
-  author={Adri{\'a}n Javaloy and Pablo S'anchez-Mart'in and Isabel Valera},
-  journal={ArXiv},
-  year={2023},
-  volume={abs/2306.05415},
+@inproceedings{
+javaloy2023causal,
+title={Causal normalizing flows: from theory to practice},
+author={Adri{\'a}n Javaloy and Pablo Sanchez Martin and Isabel Valera},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=QIFoCI7ca1}
 }
 ```
 
