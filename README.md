@@ -201,6 +201,8 @@ These commands will generate the pairplot figures for the respective datasets.
 
 To perform fairness auditing and classification using the German dataset, please follow the instructions below:
 
+Download the processed data from [here](https://zenodo.org/records/10785677).
+
 Run the following commands to train the models on 5 different splits of the German dataset:
 
 ```bash
